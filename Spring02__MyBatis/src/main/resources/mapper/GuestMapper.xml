@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guest">
+	<insert id="insert" parameterType="com.gura.spring02.guest.dto.GuestDto">
+		INSERT INTO board_guest
+		(num, writer, content, pwd, regdate)
+		VALUES (board_guest_seq.NEXTVAL , #{writer}, #{content}, #{pwd}, SYSDATE)
+	</insert>
+	
+	<update id="update" parameterType="com.gura.spring02.guest.dto.GuestDto">
+   		UPDATE board_guest
+   		<!-- 작성자와 내용만 수정 -->
+   		SET writer=#{writer}, content=#{content}
+   		<!-- 비밀번호 다르면 수정 불가능하게 -->
+   		WHERE num=#{num} AND pwd=#{pwd}
+    </update>
+    
+    <!-- parameterType="int" 로는 num=#{num} AND pwd=#{pwd} 두개를 들고올 수 없으니까 GuestDto로 설정 --> 
+    <delete id="delete" parameterType="com.gura.spring02.guest.dto.GuestDto">
+   		DELETE FROM board_guest
+   		WHERE num=#{num} AND pwd=#{pwd}
+    </delete>
+	
+	<!-- select 된 row 하나를 어떤 타입에 담을지 결정하는 것이 resultType= "담을 Type" -->  
+	<select id="getData" resultType="com.gura.spring02.guest.dto.GuestDto" parameterType="int">
+      SELECT num, writer, content, pwd, regdate
+      FROM board_guest
+      WHERE num=#{num}
+    </select>
+	
+	<select id="getList" resultType="com.gura.spring02.guest.dto.GuestDto">
+      SELECT num, writer, content, pwd, regdate
+      FROM board_guest
+      ORDER BY num ASC
+    </select>
+    
+</mapper>
