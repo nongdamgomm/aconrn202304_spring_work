@@ -77,6 +77,9 @@
       
       new SqlSessionTemplate(sessionFactory);
     -->
+    
+    
+    
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -90,7 +93,7 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	<!-- com.gura.spring02 패키지와 하위 패키지를 ㄴ모두 탐색 ㅣRK -->
+	<!-- com.gura.spring02 패키지와 하위 패키지를  모두 탐색 ㅣRK -->
 	<context:component-scan base-package="com.gura.spring02" />
 	
 	

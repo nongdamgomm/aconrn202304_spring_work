@@ -14,6 +14,7 @@
 			이름<input type="text" name="name" /><br />
 			주소<input type="text" name="addr" /><br />
 			<button type="submit">추가</button>
+			
 		</form>
 		<h1>회원 추가 폼2</h1>
 		<form action="${pageContext.request.contextPath }/member/insert2" method="post">

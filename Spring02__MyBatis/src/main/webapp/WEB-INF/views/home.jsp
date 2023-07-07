@@ -9,17 +9,17 @@
 </head>
 <body>
 	<div class="container">
-		<h1>인덱스 페이지 입니다</h1>
+		<h1>인덱스 페이지</h1>
 		<ul>
 			<li><a href="member/list">회원목록 보기</a></li>
 			<li><a href="guest/list">방명록 보기</a></li>
 		</ul>
-		<h2>공지사항</h2>
+		<%-- <h2>공지사항</h2>
 		<ul>
 			<c:forEach var="tmp" items="${requestScope.noticeList }">
 				 <li>${tmp }</li>
 			</c:forEach>
-		</ul>
+		</ul> --%>
 	</div>
 </body>
 </html>
