@@ -1,10 +1,10 @@
-package com.gura.spring04.gallery.service;
+package com.example.boot07.gallery.service;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.ModelAndView;
 
-import com.gura.spring04.gallery.dto.GalleryDto;
+import com.example.boot07.gallery.dto.GalleryDto;
 
 public interface GalleryService {
 	//갤러리의 list 가져오기
